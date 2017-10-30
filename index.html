@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>What percent milk are you?</title>
+<style>
+body {
+background-color: lightpink;
+font-family: Helvetica;
+}
+
+#main {
+width: 60%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background-image: url("milk.jpg");
+}
+
+label {
+width: 190px;
+display: inline-block;
+}
+
+button {
+display: block;
+margin-top: 20px;
+
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"><h1>What pecent milk are you?</h1></div>
+
+<form  id="form1">
+<p>Pick a color.</p></td><td>
+<label><input type="radio" name="color" id="blue" value="2"/><img src="blue.jpg"></label>
+<label><input type="radio" name="color" id="red" value="4" /><img src="red.jpg"></label>
+<label><input type="radio" name="color" id="tan" value="1" /><img src="tan.jpg"></label>
+<label><input type="radio" name="color" id="green" value="3" /><img src="green.jpg"></label>
+
+<p>Pick an animal.</p>
+<label><input type="radio" name="animal" id="otter" value="1" /><img src="otter.jpg"></label>
+<label><input type="radio" name="animal" id="honeybadger" value="2" /><img src="honeybadger.jpg"></label>
+<label><input type="radio" name="animal" id="tiger" value="4" /><img src="tiger.jpg"></label>
+<label><input type="radio" name="animal" id="bear" value="3" /><img src="bear.jpg"></label>
+
+<p>Pick a dream job.</p>
+<label><input type="radio" name="job" id="stockbroker" value="2" /><img src="stockbroker.jpg"></label>
+<label><input type="radio" name="job" id="zookeeper" value="1" /><img src="zookeeper.jpg"></label>
+<label><input type="radio" name="job" id="actor" value="3" /><img src="actor.jpg"></label>
+<label><input type="radio" name="job" id="singer" value="4" /><img src="singer.jpg"></label>
+
+<p>Pick a breakfast.</p>
+<label><input type="radio" name="breakfast" id="cereal" value="1" /><img src="cereal.jpg"></label>
+<label><input type="radio" name="breakfast" id="eggs_benedict" value="2" /><img src="eggs_benedict.jpg"></label>
+<label><input type="radio" name="breakfast" id="avocado_toast" value="3" /><img src="avocado_toast.jpg"></label>
+<label><input type="radio" name="breakfast" id="filet_mignon" value="4" /><img src="filet_mignon.jpg"></label>
+
+
+<button type="submit" value="Submit">Done!</button>
+</td></tr>
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+</div>
+<script>
+ 
+    
+	   document.getElementById("form1").onsubmit=function() {
+	   
+	 color = parseInt(document.querySelector('input[name = "color"]:checked').value);
+	  
+	 animal = parseInt(document.querySelector('input[name = "animal"]:checked').value);
+	   
+	 job = parseInt(document.querySelector('input[name = "job"]:checked').value);
+
+	 breakfast = parseInt(document.querySelector('input[name = "breakfast"]:checked').value);
+	   
+	 total= color + animal + job + breakfast ;
+	   
+	  
+	   document.getElementById("answer").innerHTML = total
+	   document.getElementById("answer").style.display = "none";	   
+	   
+
+	if(total < 5) {
+document.getElementById("answer2").innerHTML = "Skim Milk. You like the simple things in life. Yu dont seek to be everyones favorite. You keep a small group of ride or dies and thats all you need.";
+}
+
+   	if(total >=5 && total < 9) {
+document.getElementById("answer2").innerHTML = "1% Milk. Youre super practical. Youve got all the charm of a 2% without all the baggage. People say youre watered down but they wont be saying that when they see your 401K.";
+}
+	
+	if(total >=9 && total <13) {
+document.getElementById("answer2").innerHTML = "2% Milk. Youre always the center of attention. Youre super friendly and approachable. Youre the life of the party and people just cant help but be comfortable around you!";
+}   
+
+	if(total >=13) {
+document.getElementById("answer2").innerHTML = "Whole Milk. Youre a baddie and you dont care who sees. You do what you want regardless of what people think. Still, under all that coolness, theres a nurturing soul waiting to love people.";
+} 
+
+		   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+	
+
+</script>
+
+
+
+</body>
+</html>
